@@ -1,0 +1,11 @@
+#!/bin/zsh
+echo "[Decaf] building..."
+swift build -c release
+
+if ! [[ ":$PATH:" == *":$CWD/.build/release/:"* ]] then
+    echo "[Decaf] Adding to path... (Assuming you use zsh)"
+    echo "export PATH=$(pwd)/.build/release:$PATH" >> ~/.zprofile
+fi
+
+source ~/.zprofile
+echo "[Decaf] finished!"
