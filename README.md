@@ -15,9 +15,9 @@ You need to make sure that you are on swift >= 5.5 as this uses a newer version 
 To dump the interface of an obj-c class, just pop the class into the `ClassInfo` struct like this:
 ```swift
 let classNameString: UnsafePointer<CChar> = NSString("SomeObject").UTF8String
-let ourClass: AnyClass? = objc_getClass(classNameString)
+let ourClass: AnyClass? = objc_getClass(classNameString) as? AnyClass
 guard ourClass != nil else {
-    // Throw whatever error here beccause the class needs to be loaded into memory
+    // Throw whatever error here because the class needs to be loaded into memory
 }
 let classInfo: ClassInfo = ClassInfo(withClass: ourClass!)
 ```
