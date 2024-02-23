@@ -121,6 +121,3 @@ It will also print out the version and bundle ID of the framework.
 - Limit the output of the list: `--limit <limit> (default: 50)`
 - List all frameworks: `-a, --all`
 - Use a custom framework path: `--custom <custom path>`
-
-#
-Copyright © https://github.com/c0dine, all rights reserved
